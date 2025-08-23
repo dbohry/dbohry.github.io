@@ -4,7 +4,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daniel Küster Bohry</title>
 <style>
-/* ===== minimal, accessible, no external requests ===== */
 :root{
   --bg:#0b1220;          /* deep navy */
   --bg2:#0e162b;         /* subtle gradient stop */
@@ -63,12 +62,28 @@ footer{margin-top:2.5rem; font-size:.95rem; color:var(--muted)}
 @media (prefers-reduced-motion: reduce){
   .actions a{transition:none}
 }
+
+@media (prefers-reduced-motion: no-preference){
+  .reveal{opacity:0; transform:translateY(6px); animation:rise .38s ease-out forwards}
+  .reveal.slow{animation-duration:.48s; animation-delay:.06s}
+
+  .actions a{
+    opacity:0; transform:translateY(4px);
+    animation:rise .28s ease-out forwards
+  }
+  .actions a:nth-child(1){animation-delay:.08s}
+  .actions a:nth-child(2){animation-delay:.14s}
+  .actions a:nth-child(3){animation-delay:.20s}
+
+  @keyframes rise{to{opacity:1; transform:none}}
+}
+
 </style>
 
 <main>
   <section class="wrap">
-    <p class="lead">I’m a software engineer with 10+ years of experience, working with microservices since 2014.</p>
-    <p class="subtle">I build reliable, boring-in-the-best-way systems. You can call me Daniel :)</p>
+    <p class="lead reveal">I’m a software engineer with 10+ years of experience, working with microservices since 2014.</p>
+    <p class="subtle reveal slow">I build reliable, boring-in-the-best-way systems. You can call me Daniel :)</p>
 
     <nav class="actions" aria-label="Contact and profiles">
       <a href="mailto:danielbohry@gmail.com?subject=Contact%20From%20Website" rel="noopener">
@@ -88,7 +103,7 @@ footer{margin-top:2.5rem; font-size:.95rem; color:var(--muted)}
       </a>
     </nav>
 
-    <footer>Based in Germany. Open to interesting problems, not hype.</footer>
+    <footer class="reveal slow">Based in Germany. Open to interesting problems, not hype.</footer>
   </section>
 </main>
 </html>

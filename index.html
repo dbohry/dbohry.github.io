@@ -2,6 +2,9 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+  <link rel="icon" type="image/svg+xml" href="images/db.svg">
+</head>
 <title>Daniel Küster Bohry</title>
 <style>
 :root{
@@ -30,7 +33,20 @@ main{
   place-items:center;
   padding:10vh 6vw;
 }
-.wrap{max-width:62ch}
+.wrap{max-width:62ch; text-align:center}
+
+.avatar{
+  width:132px; height:132px; border-radius:50%; object-fit:cover; display:block;
+  margin:0 auto 1rem;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.06),
+    0 0 0 6px var(--ring),
+    0 10px 24px rgba(0,0,0,.35);
+}
+@media (min-width:720px){
+  .avatar{width:160px;height:160px}
+}
+
 h1{
   font-size:clamp(2rem,4.5vw,3rem);
   line-height:1.2;
@@ -44,8 +60,9 @@ h1{
   margin:0 0 1rem;
 }
 .subtle{color:var(--muted); margin:0 0 1.75rem}
+
 .actions{
-  display:flex; flex-wrap:wrap; gap:.75rem;
+  display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center;
 }
 .actions a{
   display:inline-flex; align-items:center; gap:.5rem;
@@ -63,25 +80,22 @@ footer{margin-top:2.5rem; font-size:.95rem; color:var(--muted)}
   .actions a{transition:none}
 }
 
+/* Entrance */
 @media (prefers-reduced-motion: no-preference){
   .reveal{opacity:0; transform:translateY(6px); animation:rise .38s ease-out forwards}
   .reveal.slow{animation-duration:.48s; animation-delay:.06s}
-
-  .actions a{
-    opacity:0; transform:translateY(4px);
-    animation:rise .28s ease-out forwards
-  }
+  .actions a{opacity:0; transform:translateY(4px); animation:rise .28s ease-out forwards}
   .actions a:nth-child(1){animation-delay:.08s}
   .actions a:nth-child(2){animation-delay:.14s}
   .actions a:nth-child(3){animation-delay:.20s}
-
   @keyframes rise{to{opacity:1; transform:none}}
 }
-
 </style>
 
 <main>
   <section class="wrap">
+    <img class="avatar reveal" src="images/avatar_256.webp" alt="Portrait of Daniel Küster Bohry" width="160" height="160" decoding="async">
+
     <p class="lead reveal">I’m a software engineer with 10+ years of experience, working with microservices since 2014.</p>
     <p class="subtle reveal slow">I build reliable, boring-in-the-best-way systems. You can call me Daniel :)</p>
 

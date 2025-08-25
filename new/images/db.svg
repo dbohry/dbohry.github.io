@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <defs>
-    <style>
-      .txt { font: 360px/1.0 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; font-weight: 800; }
-    </style>
-  </defs>
-  <rect x="0" y="0" width="512" height="512" rx="96" fill="#0b1220"/>
-  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" class="txt" fill="#e6eaf2">DB</text>
-</svg>

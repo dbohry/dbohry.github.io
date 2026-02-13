@@ -1,0 +1,112 @@
+/* Halloween Theme */
+body.halloween-mode {
+    background: #000000;
+}
+
+body.halloween-mode main {
+    padding: 0;
+}
+
+body.halloween-mode .wrap {
+    max-width: none;
+}
+
+body.halloween-mode .avatar-container {
+    display: none;
+}
+
+body.halloween-mode h1 {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+    font-size: 14rem;
+    font-weight: bold;
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000;
+    animation: shake 0.15s infinite !important;
+    font-style: normal;
+    opacity: 1 !important;
+    margin: 0;
+}
+
+@keyframes shake {
+    0% { transform: translate(0.5px, 0.5px); }
+    10% { transform: translate(-0.5px, -0.5px); }
+    20% { transform: translate(-0.5px, 0px); }
+    30% { transform: translate(0.5px, 0.5px); }
+    40% { transform: translate(0px, -0.5px); }
+    50% { transform: translate(-0.5px, 0.5px); }
+    60% { transform: translate(0.5px, 0px); }
+    70% { transform: translate(0px, 0.5px); }
+    80% { transform: translate(-0.5px, -0.5px); }
+    90% { transform: translate(0.5px, 0.5px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+body.halloween-mode .lead,
+body.halloween-mode .subtle,
+body.halloween-mode footer {
+    display: none;
+}
+
+body.halloween-mode .actions {
+    max-width: 600px;
+    margin: 1rem auto 0;
+    gap: 1rem;
+}
+
+body.halloween-mode .actions a {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    color: #ff0000;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: 2px solid #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+    background: transparent;
+    backdrop-filter: none;
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+body.halloween-mode .actions a::before {
+    display: none;
+}
+
+body.halloween-mode .actions a:hover {
+    background-color: #ff0000;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 0 0 20px #ff0000;
+    transform: none;
+}
+
+body.halloween-mode .actions a svg {
+    display: none;
+}
+
+body.halloween-mode .actions a:hover svg {
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    body.halloween-mode h1 {
+        font-size: 6rem;
+    }
+    body.halloween-mode .actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body.halloween-mode h1 {
+        font-size: 4rem;
+    }
+}

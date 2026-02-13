@@ -6,13 +6,27 @@ if (experienceElement) {
     experienceElement.textContent = yearsExperience + '+';
 }
 
-// Avatar click-and-hold functionality
+const possibleSentences = [
+    "I build reliable, boring-in-the-best-way systems.",
+    "I craft boring‑in‑the‑best‑way microservices that just work.",
+    "I write code that's predictably predictable.",
+    "I specialize in systems that don't wake you up at night.",
+    "I build systems that are reliable, boring‑in‑the‑best‑way, and actually stay up on weekends.",
+    "I specialise in building boring‑in‑the‑best‑way systems that just work, quietly and reliably.",
+    "I turn requirements into reliable, boring‑in‑the‑best‑way systems that scale without drama.",
+];
+
+const subtleElement = document.querySelector('.subtle');
+if (subtleElement) {
+    const randomSentence = possibleSentences[Math.floor(Math.random() * possibleSentences.length)];
+    subtleElement.textContent = randomSentence;
+}
+
 const avatarContainer = document.querySelector('.avatar-container');
 
 if (avatarContainer) {
     let holdStartTime = null;
 
-    // Mouse events
     avatarContainer.addEventListener('mousedown', () => {
         avatarContainer.classList.add('switched');
         holdStartTime = Date.now();
@@ -39,7 +53,6 @@ if (avatarContainer) {
         holdStartTime = null;
     });
 
-    // Touch events for mobile
     avatarContainer.addEventListener('touchstart', (event) => {
         event.preventDefault();
         avatarContainer.classList.add('switched');
@@ -62,7 +75,6 @@ if (avatarContainer) {
         holdStartTime = null;
     });
 
-    // Keyboard interaction for accessibility
     avatarContainer.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();

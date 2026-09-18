@@ -204,6 +204,10 @@ body.game-mode .avatar-container, body.game-mode .btn, body.game-mode #theme-tog
   transition:transform .1s steps(2), box-shadow .1s steps(2);
 }
 body.game-mode .avatar{border-radius:0}
+body.game-mode .avatar-container .avatar-primary, body.game-mode .avatar-container.switched .avatar-secondary{opacity:0}
+body.game-mode .avatar-container .avatar-secondary, body.game-mode .avatar-container.switched .avatar-primary{opacity:1}
+body.game-mode .avatar-container .avatar-primary{z-index:1}
+body.game-mode .avatar-container .avatar-secondary{z-index:2}
 body.game-mode .eyebrow{font-size:.5rem; line-height:1.8; color:var(--yellow)}
 body.game-mode .title{font-size:clamp(1.4rem, 6vw, 2.6rem); line-height:1.3; font-weight:400}
 body.game-mode .title .wobble{animation:blink 1s steps(2) infinite}

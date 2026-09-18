@@ -56,12 +56,15 @@ if (avatarContainer) {
     }
 
     function endHold() {
-        if (holdStartTime && Date.now() - holdStartTime >= 10000) {
+        const held = holdStartTime ? Date.now() - holdStartTime : 0;
+        if (held >= 10000) {
+            document.body.classList.remove("game-mode");
             document.body.classList.add("glitch-mode");
             const h1 = document.querySelector("h1");
             if (h1) h1.textContent = "Daniel";
             return;
         }
+        if (held >= 2000) document.body.classList.toggle("game-mode");
         avatarContainer.classList.remove("switched");
         holdStartTime = null;
     }
